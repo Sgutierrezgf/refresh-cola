@@ -18,20 +18,25 @@ function App() {
   const catchName = names[0].name
 
   const repeat = () =>{
-    for (let index = 0; index <= 4; index++) {
+    for (let i = 0; i <= 4; i++) {
       CatchNameFinal()
-      console.log(CatchNameFinal)
     }
+    console.log(CatchNameFinal())
     }
     
-  const CatchNameFinal = () => {
+  function CatchNameFinal() {
     const sendToLastName = catchName
-      const oldUsersWithoutFiltered = names.filter((user) => user.name !== sendToLastName)
-      setNames([
-        ...oldUsersWithoutFiltered,
-        newUser(sendToLastName),
-        newUser(sendToLastName)
-      ])
+    const namesArray = names
+      const oldUsersWithoutFiltered = namesArray.filter((user) => user.name !== sendToLastName)
+      for (let i = 0; i <= 4; i++) {
+        setNames([
+          ...oldUsersWithoutFiltered,
+          newUser(sendToLastName),
+          newUser(sendToLastName)
+        ])
+      }
+      console.log([...oldUsersWithoutFiltered, sendToLastName, sendToLastName])
+      return [...oldUsersWithoutFiltered, sendToLastName, sendToLastName]
     }
 
 
